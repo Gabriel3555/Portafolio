@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Menu vertical responsivo</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="mobile">
+                <div class="header">
+                    <div class="logo">Logo</div>
+                    <div class="more">
+                        <button id="bMore"><span class="material-symbols-outlined">menu</span></button>
+                    </div>
+                </div>
+                <div id="links" class="links">
+                    <a href="#">Search</a>
+                    <a href="#">Sign up</a>
+                    <a href="#">Login</a>
+                </div>
+            </div>
+            <div class="desktop">
+                <div class="logo">Logo</div>
+
+                <div class="secondary full">
+                    <a href="#">Search</a>
+                    <a href="#">Sign up</a>
+                    <a href="#">Login</a>
+                </div>
+
+                <div class="secondary mini">
+                    <a href="" class="more">More</a>
+                    <div class="submenu">
+                        <a href="#">Search</a>
+                        <a href="#">Sign up</a>
+                        <a href="#">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-background">
+            <h1>Gabriel Barrantes</h1>
+            <h2>Developer</h2>
+        </div>
+        <div class="container"></div>
+        <div class="container"></div>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        document.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            var linksNav = nav.querySelectorAll('a');
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition > 50) {
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.75)'; // Cambia el color al deslizar
+            } else {
+                nav.style.backgroundColor = '0'
+                linksNav.style.opacity = '1'; // Restaura el color original
+            }
+        });
+
+        const bMore = document.querySelector("#bMore");
+        const links = document.querySelector("#links")
+
+        bMore.addEventListener("click", (e) => {
+            if (links.style.display === 'none' || links.style.display === '') {
+            links.style.display = 'block';
+            } else {
+            links.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
